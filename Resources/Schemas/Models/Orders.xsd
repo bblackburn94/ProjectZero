@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns:Orders="http://www.tibco.com/schemas/ProjectZero/Resources/Schemas/Models/Orders"
+	 xmlns:Order="http://www.tibco.com/schemas/ProjectZero/Resources/Schemas/Models/Order"
+	 xmlns:ShipInfo="http://www.tibco.com/schemas/ProjectZero/Resources/Schemas/Models/ShipInfo"
+	 targetNamespace="http://www.tibco.com/schemas/ProjectZero/Resources/Schemas/Models/Orders"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	 <xs:import namespace="http://www.tibco.com/schemas/ProjectZero/Resources/Schemas/Models/ShipInfo" schemaLocation="ShipInfo.xsd"/>
+	 <xs:import namespace="http://www.tibco.com/schemas/ProjectZero/Resources/Schemas/Models/Order" schemaLocation="Order.xsd"/>
+		<xs:element name="Orders">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element ref="Order:Order"/>
+					<xs:element ref="ShipInfo:ShipInfo"/>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:element>
+</xs:schema>
